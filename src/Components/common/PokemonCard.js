@@ -19,7 +19,7 @@ const PokemonCard = ({ pokemon }) => {
 
     useEffect(() => {
         createPokemon(pokemon)
-    }, [])
+    }, )
     
     
   if (pokeDetail) {
