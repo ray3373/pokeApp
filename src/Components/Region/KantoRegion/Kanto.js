@@ -7,15 +7,14 @@ import { useState } from 'react'
 function KantoPokemon() {
   //Hook to store pokemon data
     const [allPokemons, setallPokemons] = useState([]);
-    const [regionFirst, setRegionFirst] = useState()
-    const [regionSecond, setRegionSecond] = useState()
-    const [regionThird, setRegionThird] = useState()
-    let count = 1;
+    // const [regionFirst, setRegionFirst] = useState()
+    // const [regionSecond, setRegionSecond] = useState()
+    // const [regionThird, setRegionThird] = useState()
+    // let count = 1;
 
 
   //fetching data and storing it
   const getAllPokemons = async () =>{ 
-    // const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
     const data = await res.json()
     console.log(data);
@@ -30,21 +29,14 @@ function KantoPokemon() {
     });
   }
 
-  //Auto-Calling the function after data is fetched
   useEffect(()=>{
-    // while (count < 4);
-    // console.log(count);
-      // getAllPokemons(150*(count-1),150*count);
-      // count++
       getAllPokemons()
     }, []);
-console.log(allPokemons)
-
 
 
 return(
   <>
-    <h1>Pokedex</h1>
+    {/* <h1>Pokedex</h1> */}
     <div>
     {/* <Header /> */}
       {allPokemons.map((pokemon,index)=>

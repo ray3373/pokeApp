@@ -8,7 +8,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  // Link,
 } from "react-router-dom";
+import KantoPokemon from "./Components/Region/KantoRegion/Kanto";
+
 function App() {
 
   return (
@@ -16,10 +19,11 @@ function App() {
     <Header/>
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/region" element={<Region />} />
-        <Route path="/type" element={<Type />} />
-        <Route path="/detail/:pokemon" element={<PokeDetailCard />} />
+        <Route exact path="/" element={<Home />} ></Route>
+        <Route exact path="/region" element={<Region />}> </Route>
+        <Route exact path="/type" element={<Type />} ></Route>
+        <Route exact path="/detail/:pokemon" element={<PokeDetailCard />} ></Route>
+        <Route exact path="/region/kantoregion" element={<KantoPokemon />} ></Route>
       </Routes>
     </Router>
     <Footer/>
